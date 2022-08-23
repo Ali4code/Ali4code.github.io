@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import getGitHistory from "./api/GitHistoryAPI";
+import { useEffect } from "react";
+import getGitHistory from "./api/git-history-api";
 
 function App() {
+  let authKey = "from input to fill";
   useEffect(() => {
-    let authKey = "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";
     getGitHistory(authKey).then((data) => {
       console.log(data);
     });
-  }, []);
+  }, [authKey]);
 
   return <div className="App"></div>;
 }
