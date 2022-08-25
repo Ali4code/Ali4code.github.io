@@ -2,11 +2,11 @@ import Classes from "./single-commit.module.css";
 import { ISingleCommit } from "./interface-single-commit";
 
 function SingleCommit(props: ISingleCommit) {
-  const { message, name, time } = props;
+  const { message, name, date } = props;
   return <div className={`${Classes.wrapper} ${Classes.shadow}`}>
     <h3>{message}</h3>
     <div className={Classes.details}>
-        <p>{time.toDateString()}</p>
+        <p>{date.toString()}</p>
         <p>by {name}</p>
     </div>
   </div>;
