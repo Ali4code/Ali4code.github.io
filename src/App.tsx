@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   const listOfCommits = commitsHistory?.map((item) => {
-    return <SingleCommit key={item?.node_id} name={item?.commit?.committer?.name} date={item?.commit?.committer?.date} message={item?.commit?.message} />;
+    return <SingleCommit key={item?.node_id} author={item?.commit?.committer?.name} date={item?.commit?.committer?.date} message={item?.commit?.message} />;
   });
 
   return (

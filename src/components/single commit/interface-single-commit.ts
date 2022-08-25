@@ -1,5 +1,5 @@
 export interface ISingleCommit {
   message: string;
-  name: string;
+  author: string;
   date: Date;
 }
