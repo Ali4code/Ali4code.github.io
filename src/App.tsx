@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import getGitHistory from "./api/git-history-api";
 import SingleCommit from "./components/single commit/single-commit";
-import AuthKeyForm from "./components/auth-key-form";
+import AuthKeyForm from "./components/authkey-form/auth-key-form";
 import { ICommitResponse } from "./api/interface-commit-respose";
 
 function App() {

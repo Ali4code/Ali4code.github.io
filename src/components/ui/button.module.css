@@ -1,0 +1,18 @@
+.btn {
+    background-color: #486577;
+    color: #FFFF;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 24px;
+    max-width: 300px;
+    width: 70vw;
+    height: 45px;
+    align-self: center;
+    flex-shrink: 0;
+    margin-bottom: 8px;
+}
+
+.btn:disabled {
+    background-color: #D3D8E1;
+}
