@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# What was done?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Implementation of the “Git Commit History app as a test project for FrontEnd dev of Insided” using TypeScript and React.
+Public url : https://ali4code.github.io/git-history/
 
-## Available Scripts
+# Design
 
-In the project directory, you can run:
+ Used React.js and typescript and also tried to wirte some test to demonstrate my fimilarity with writing tests and TDD approach even though this project not have complex logic(I did not completely follow TDD), just implement few tests. used functional components and hooks like useState, useEffect, useRef.
+ I Did not use any React UI Component Library as it was not really needed but I worked last 2 years with MUI, plain css is used as modules per component, and tried to make project fully resposive to different screen sizes. also I wanted to implement some end-to-end tests with Cypress But if i can not push auth token what should i test ? (further approach)
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Main technology stack for this project are:
+    * [React](https://reactjs.org/) library for building ui
+    * [TypeScript](https://www.typescriptlang.org/) Used typed syntax
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# How to run
 
-### `yarn test`
+> _NOTE: requires node v more than 16 (preferable LTS 16.16.0)
+>
+Go to the project directory
+```bash
+cd git-history
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install dependencies using: 
+```bash
+yarn
+```
+Run the project using: 
+```bash
+yarn start
+```
+Run unit tests using: 
+```bash
+yarn test
+```
+The project is running in:  
+http://localhost:3000
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Thing's I learn
+There are some things that I learned during this sample project:
+* Github pages
+* Github Commit Api
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Further improvements
+Because of time limits, but there are some things that if I had more time, I would do:
+* improves the overall UI of the system to be pretty.
+* add more interactivity to adding access token so if its unvalid color changed or if its added we dont see input anymore.
+* add another filed for user & repo address so this app is not just limited to this projects history
+* add more unit tests and e2e test
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
