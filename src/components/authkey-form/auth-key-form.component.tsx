@@ -1,16 +1,24 @@
 import { useState } from "react";
+import { ICommitResponse } from "../../api/commit-respose.interface";
+import getGitHistory from "../../api/git-history.api";
 import Button from "../ui/button";
 import Classes from "./auth-key-form.module.css";
-function AuthKeyForm() {
+
+function AuthKeyForm({ historyAndTimerHandler }: { historyAndTimerHandler: (data: ICommitResponse[]) => void }) {
   const [authKey, setAuthKey] = useState("");
+
   const addKey = (event: { preventDefault: () => void }) => {
     event?.preventDefault();
-    if (authKey) {
-      localStorage.setItem("auth-key", authKey);
-      setAuthKey("")
+
+    if (!authKey) {
+      alert("please provide an Access Token");
       return;
     }
-    alert("please provide an Access Token");
+    getGitHistory(authKey).then((data) => {
+      historyAndTimerHandler(data);
+    });
+    localStorage.setItem("auth-key", authKey);
+    setAuthKey("");
   };
   return (
     <form className={Classes.form} onSubmit={addKey}>

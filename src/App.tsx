@@ -11,18 +11,29 @@ function App() {
   const [seconds, setSeconds] = useState<number>(30);
   const intervalRef = useRef<number>();
 
+  const historyAndTimerHandler = (data: ICommitResponse[]) => {
+    if (!data) {
+      alert("please enter valid token");
+      return;
+    }
+    setCommitsHistory(data);
+    setSeconds(30);
+    intervalRef.current = window.setInterval(() => {
+      setSeconds((prev) => prev - 1);
+    }, 1000);
+  };
+
   useEffect(() => {
     const authKey = localStorage.getItem("auth-key");
     if (!authKey) {
       return;
     }
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
     getGitHistory(authKey).then((data) => {
-      setCommitsHistory(data);
+      historyAndTimerHandler(data);
     });
-
-    intervalRef.current = window.setInterval(() => {
-      setSeconds((prev) => prev - 1);
-    }, 1000);
 
     return () => clearInterval(intervalRef.current);
   }, []);
@@ -37,11 +48,7 @@ function App() {
 
     clearInterval(intervalRef.current);
     getGitHistory(authKey).then((data) => {
-      setCommitsHistory(data);
-      setSeconds(30);
-      intervalRef.current = window.setInterval(() => {
-        setSeconds((prev) => prev - 1);
-      }, 1000);
+      historyAndTimerHandler(data);
     });
   };
 
@@ -66,7 +73,7 @@ function App() {
     <div className="App">
       <h1> Git Commit History App</h1>
       <div className="container">
-        <AuthKeyForm />
+        <AuthKeyForm historyAndTimerHandler={historyAndTimerHandler} />
         {commitsHistory.length > 0 && <Refresh refreshHandler={refreshHandler} seconds={seconds} />}
       </div>
       {listOfCommits}
