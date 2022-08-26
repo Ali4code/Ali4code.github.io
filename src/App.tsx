@@ -16,6 +16,9 @@ function App() {
       alert("please enter valid token");
       return;
     }
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
     setCommitsHistory(data);
     setSeconds(30);
     intervalRef.current = window.setInterval(() => {
@@ -28,9 +31,7 @@ function App() {
     if (!authKey) {
       return;
     }
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
+    
     getGitHistory(authKey).then((data) => {
       historyAndTimerHandler(data);
     });
