@@ -35,6 +35,7 @@ function App() {
       return;
     }
 
+    clearInterval(intervalRef.current);
     getGitHistory(authKey).then((data) => {
       setCommitsHistory(data);
       setSeconds(30);
