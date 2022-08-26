@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import getGitHistory from "./api/git-history-api";
-import SingleCommit from "./components/single commit/single-commit";
-import AuthKeyForm from "./components/authkey-form/auth-key-form";
-import { ICommitResponse } from "./api/interface-commit-respose";
-import Refresh from "./components/refresh/refresh";
+import getGitHistory from "./api/git-history.api";
+import SingleCommit from "./components/single commit/single-commit.component";
+import AuthKeyForm from "./components/authkey-form/auth-key-form.component";
+import { ICommitResponse } from "./api/commit-respose.interface";
+import Refresh from "./components/refresh/refresh.component";
 
 function App() {
   const [commitsHistory, setCommitsHistory] = useState<ICommitResponse[]>([]);

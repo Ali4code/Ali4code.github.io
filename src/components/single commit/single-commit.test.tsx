@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import SingleCommit from "./single-commit";
+import SingleCommit from "./single-commit.component";
 
 
 const mockData = { message: "this is a test", author: "test author", date: new Date() };

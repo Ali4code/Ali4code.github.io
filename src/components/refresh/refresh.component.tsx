@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../ui/button";
-import { IRefresh } from "./interface-refresh";
+import { IRefresh } from "./refresh.interface";
 import Classes from './refresh.module.css'
 
 function Refresh(props: IRefresh) {

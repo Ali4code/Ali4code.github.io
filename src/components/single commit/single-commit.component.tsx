@@ -1,5 +1,5 @@
 import Classes from "./single-commit.module.css";
-import { ISingleCommit } from "./interface-single-commit";
+import { ISingleCommit } from "./single-commit.interface";
 
 function SingleCommit(props: ISingleCommit) {
   const { message, author, date } = props;
