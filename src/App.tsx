@@ -67,7 +67,7 @@ function App() {
       <h1> Git Commit History App</h1>
       <div className="container">
         <AuthKeyForm />
-        <Refresh refreshHandler={refreshHandler} seconds={seconds} />
+        {commitsHistory.length > 0 && <Refresh refreshHandler={refreshHandler} seconds={seconds} />}
       </div>
       {listOfCommits}
     </div>
